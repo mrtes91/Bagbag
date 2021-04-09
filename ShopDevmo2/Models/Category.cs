@@ -1,5 +1,6 @@
 namespace Shop.Models
 {
+    using ShopDevmo2.Models;
     using System;
     using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations;
@@ -12,6 +13,7 @@ namespace Shop.Models
             //this.Products = new HashSet<Product>();
         }
     
+        [Required(ErrorMessage = "Please input category name")]
         public string DisplayText { get; set; }
         public long Id { get; set; }   
         public long? ParentId { get; set; }

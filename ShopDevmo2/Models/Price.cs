@@ -1,7 +1,8 @@
 namespace Shop.Models
 {
 	using global::Shop.Models.Enums;
-	using System;
+    using ShopDevmo2.Models;
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
