@@ -26,6 +26,12 @@ namespace ShopDevmo2
                         "~/Scripts/summernote-bs4.min.js",
                         "~/Scripts/jquery.overlayScrollbars.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bagbag").Include(
+                        "~/Scripts/bagbag/cart.js",
+                        "~/Scripts/bagbag/categories.js",
+                        "~/Scripts/bagbag/details.js",
+                        "~/Scripts/bagbag/main.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -39,13 +45,25 @@ namespace ShopDevmo2
                       "~/Content/site.css"));
             // Style bundle for AdminLTE
             bundles.Add(new StyleBundle("~/Content/adminlte/css").Include(
-                        "~/Content/Fontawesome/all.min.css",
+                        "~/Content/fontawesome/all.min.css",
                         "~/Content/adminlte.min.css",
                         "~/Content/tempusdominus-bootstrap-4.min.css",
                         "~/Content/icheck-bootstrap.min.css",
                         "~/Content/OverlayScrollbars.css",
                         "~/Content/daterangepicker.css",
                         "~/Content/summernote-bs4.css"));
+
+            // Style bundle for Main Index
+            bundles.Add(new StyleBundle("~/Content/MainIndex/css").Include(
+                "~/Content/css/header.css",
+                "~/Content/css/main-footer.css",
+                "~/Content/css/bootstrap.min.css",
+                "~/Content/css/all.min.css"));
+
+            // Libs bundle for Main Index
+            bundles.Add(new StyleBundle("~/Content/MainIndex/libs").Include(
+                "~/Content/libs/font-awesome/css/font-awesome.css",
+                "~/Content/libs/font-awesome/css/font-awesome.min.css"));
         }
     }
 }

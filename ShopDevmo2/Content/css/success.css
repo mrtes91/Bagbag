@@ -1,0 +1,20 @@
+.page-holder {
+  background-image: url(../images_final/jumbotron/jumbotron-bag3.jpg);
+}
+
+.page-holder {
+  min-height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover !important;
+}
+
+.btn > a {
+  text-decoration: none;
+  color: white;
+}
+.btn > a:hover {
+  text-decoration: none;
+  color: black;
+}

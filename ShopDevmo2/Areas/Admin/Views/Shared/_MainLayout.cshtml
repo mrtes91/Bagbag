@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Welcome to BagBag</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Content/adminlte/css")
+    @Styles.Render("~/Content/MainIndex/css")
+    @Styles.Render("~/Content/MainIndex/libs")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- ! HEADER -->
+    <header class="head-bar">
+        <nav class="container-fluid container-header px-0">
+            <!-- ! NAV-LOGO-LOGIN -->
+            <div class="row">
+                <div class="justify-content-center col-4">
+                    <a class="float-left ml-4" href="sitemap.html" target="_self"> <i class="fa fa-map-marker mr-1"></i> Sitemap</a>
+                    <a class="float-left ml-4" href="tel:+ 84 0123 456 789"> <i class="fa fa-phone mr-1"></i>+ 84 0123 456 789</a>
+                </div>
+                <div class="head-left justify-content-center mt-lg-n2 col-4">
+                    <a class="logo" href="index.html" target="_self">BAGBAG</a>
+                </div>
+                <div class="head-right col-4">
+                    <a class="float-right mr-4" href="cart.html" target="_self"><i class="fa fa-shopping-bag mr-1"></i> Cart</a>
+                    <div>
+                        <a class="float-right mr-4" href="signin.html" target="_self"> <i class="fa fa-user mr-1"></i> Sign In</a>
+                    </div>
+                    <a class="float-right mr-4" href="categories.html" target="_self"> <i class="fa fa-search mr-1"></i> Search</a>
+                </div>
+            </div>
+
+            <!-- ! NAV-DROPDOWN -->
+            <ul class="row mb-0">
+                <li class="drop-down">
+                    <a class="font-weight-bold" href="categories.html" target="_self">CATEGORIES</a>
+                </li>
+                <li class="drop-down">
+                    <a class="font-weight-bold" href="categories.html?sex=bag-men" target="_self">MEN</a>
+                </li>
+                <li class="drop-down">
+                    <a class="font-weight-bold" href="categories.html?sex=bag-women" target="_self">WOMEN</a>
+                </li>
+                <li class="drop-down">
+                    <a class="font-weight-bold" href="aboutus.html" target="_self">ABOUT US</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ! JUNBOTRON -->
+    <div class="jumbotron container-fluid rounded-0 text-light d-flex align-items-center">
+        <div class="d-none d-md-block">
+            <h1 class="display-5">Welcome to BagBag!</h1>
+            <h3>SHOP ONLINE FOR THE BAGS FASHION</h3>
+            <a href="categories.html" target="_self" class="btn btn-warning font-weight-bold rounded-0">EXPLORE NOW!</a>
+        </div>
+    </div>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 1200.88px;">
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- ! FOOTER -->
+    <footer class="row my-0 mx-auto px-3">
+        <div class="container">
+            <div class="row mt-3 pb-3">
+                <div class="col-lg-3 col-sm-12 px-0">
+                    <h5>NEED HELP?</h5>
+                    <ul class="text-muted text-decoration-none text-dark">
+                        <li><a class="a-tag" href="showroom.html" target="_self">Showroom</a></li>
+                        <li><a class="a-tag" href="payment.html" target="_self">Payment Options</a></li>
+                        <li><a class="a-tag" href="exchange.html" target="_self">Returns & Exchanges</a></li>
+                        <li><a class="a-tag" href="productcare.html" target="_self">Product Care</a></li>
+                        <li><a class="a-tag" href="delivery.html" target="_self">Delivery policy</a></li>
+                        <li><a class="a-tag" href="privacy.html" target="_self">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-12 px-0">
+                    <h5>FIND US ON</h5>
+                    <ul>
+                        <li>
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                            <a class="a-tag" href="https://facebook.com">Facebook</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <a class="a-tag" href="https://twitter.com">Twitter</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-youtube"></i>
+                            <a class="a-tag" href="https://youtube.com">Youtube</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-pinterest"></i>
+                            <a class="a-tag" href="https://pinterest.com">Pinterest</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-instagram"></i>
+                            <a class="a-tag" href="https://instagram.com">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-12 px-0">
+                    <h5>SIGN UP FOR BAGBAG UPDATES</h5>
+                    <p class="pb-1 mb-1">
+                        By entering your email address below, you consent to receiving our newsletter with access to our latest collections, events and
+                        initiatives. More details on this are provided in our
+                        <a href="privacy.html" target="_self"><span id="privacy">Privacy Policy</span></a>
+                    </p>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light" id="inlineFormInputGroupUsername2" placeholder="Email" />
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <a href="success.html" target="_self"><i class="fa fa-arrow-right a-tag"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p id="store"><h5>STORE LOCATOR</h5></p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light" id="inlineFormInputGroupUsername2" placeholder="City, Region, Country" />
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <a href="showroom.html" target="_self"><i class="fa fa-arrow-right a-tag"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center><p class="font-weight-bold mb-3">© 2020 HAT Group - All rights reserved.</p></center>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/adminlte")
+    @Scripts.Render("~/bundles/bagbag")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

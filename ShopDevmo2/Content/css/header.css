@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: toroto, sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  position: absolute;
+  font-size: 0.9rem;
+  width: 100%;
+  margin-bottom: 0;
+  /* ! BOX SHADOW */
+  box-shadow: rgba(0, 0, 0, 0.514) 0px 80px 30px -20px inset, rgb(0, 0, 0, 1) 0px 100px 60px -100px inset;
+}
+
+nav:hover {
+  background-color: rgba(52, 58, 64, 0.808);
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: fantasy;
+  letter-spacing: 12px;
+  text-align: center;
+}
+
+.search-header {
+  width: 50px;
+}
+
+/* ul img {
+  width: 50%;
+} */
+
+nav a {
+  display: block;
+  color: rgb(255, 228, 228);
+}
+
+nav a:hover {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+li > div > ul > li > a {
+  color: black;
+}
+
+nav ul li {
+  color: black;
+  list-style: none;
+  transition: 0.7s;
+}
+
+nav > ul > li > a {
+  padding: 15px 25px;
+}
+
+.container-header {
+  position: fixed;
+  z-index: 100;
+}
+
+/* nav > ul > li.drop-down a::after {
+  position: relative;
+  float: right;
+  margin-top: 10px;
+  margin-left: 8px;
+  content: '';
+  display: block;
+} */
+
+/* ! SLIDE HOVER */
+
+/* .menu-area a::after {
+  content: '';
+  width: 0%;
+  height: 0.5px;
+  left: -100%;
+  background: black;
+  position: absolute;
+  border-radius: 5px;
+  transition: all 400ms ease;
+} */
+
+.menu-area a:hover::after {
+  left: 0%;
+  width: 100%;
+}
+
+nav > ul > li:hover {
+  background-color: #f6f5f3;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-area {
+  padding: 40px 40px 0 40px;
+  background-color: #f6f5f3;
+  /* box-shadow: 0 5px 10px #c4c4c4; */
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  width: 96%;
+  top: -9999px;
+  left: 0;
+  margin: 0 2% 0 2%;
+}
+
+.menu-area ul li a {
+  display: block;
+  /* margin-left: 10px; */
+  float: none;
+}
+
+.menu-area ul {
+  width: 30%;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.menu-area h4 {
+  width: 100%;
+}
+
+nav ul li:hover .menu-area {
+  top: 100%;
+}
+
+.col-4 a {
+  /* margin-left: 20px; */
+  margin-top: 20px;
+}
+
+/* ! DROPDOWN MENU */
+
+.dropdown {
+  width: 190px;
+  color: whitesmoke;
+  font-weight: bolder;
+  font-family: toroto, sans-serif;
+  padding-top: 10px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  /* pointer-events: none; */
+}

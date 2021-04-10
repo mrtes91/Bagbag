@@ -1,0 +1,247 @@
+/* ! MAIN */
+body,
+html > body {
+  background-color: #f6f5f3;
+}
+
+/* ! FOOTER */
+footer {
+  clear: both;
+  width: 100%;
+  background-color: #1b1b1b;
+  color: #e5dfd9;
+  font-size: smaller;
+}
+
+footer .a-tag,
+i {
+  color: #e5dfd9;
+}
+
+ul,
+ul:hover {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  text-align: left;
+  padding: 0;
+}
+
+.menu-area > div > h5 {
+  padding: 15px 0;
+  font-weight: bold;
+}
+.menu-area > div > a {
+  color: black;
+  padding-bottom: 5px;
+}
+
+#privacy {
+  color: rgb(197, 74, 74);
+}
+
+#store {
+  margin: 10px 0;
+}
+
+.a-tag {
+  text-decoration: none;
+  color: rgb(51, 43, 43);
+}
+
+.a-tag:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.col-lg-6 p a:hover {
+  text-decoration: none;
+}
+
+/* ! INPUT */
+.input-group .input-group-text {
+  background: rgb(51, 43, 43);
+  border-radius: 7px;
+
+  border: none;
+}
+
+.container > img {
+  margin: 10px;
+  padding: 10px;
+}
+
+.jumbotron {
+  background-image: url('../images_final/jumbotron/jumbotron-bag6.jpg');
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ! MAIN */
+.product {
+  float: left;
+  /* height: 300px; */
+}
+
+.thumb-content > h5 {
+  padding: 5px 0;
+  margin-bottom: 0;
+}
+
+.thumb-content > p {
+  margin-bottom: 5px;
+}
+
+.drop-down > a:hover {
+  color: black;
+}
+
+.card-body > a {
+  text-decoration: none;
+  color: rgb(51, 43, 43);
+}
+.card-body > a:hover {
+  text-decoration: none;
+  color: rgb(224, 0, 0);
+}
+
+.brand > div > a > img,
+.feature > div > .card {
+  box-shadow: 0px 2px 38px rgba(0, 0, 0, 0.2);
+}
+.brand > div > a > img:hover,
+.feature > div > .card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ! CAROUSEL */
+
+.thumb-content > h5 {
+  padding: 5px 0;
+  margin-bottom: 0;
+}
+
+.thumb-content > p {
+  margin-bottom: 5px;
+}
+
+.product {
+  float: left;
+  /* height: 300px; */
+}
+
+.img-box {
+  height: 320px;
+}
+
+.carousel-control-next {
+  width: 60px !important;
+  right: -30px !important;
+}
+
+.carousel-control-next span {
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+
+.carousel-control-prev {
+  width: 60px !important;
+  left: -30px !important;
+}
+
+.carousel-control-prev span {
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+
+#demo-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1200px) {
+  .img-box {
+    margin-bottom: -55px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .img-box {
+    margin-bottom: -120px;
+  }
+  #pic-1 img,
+  #pic-2 img,
+  #pic-3 img {
+    margin-top: -400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-box {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .img-box {
+    margin-bottom: -170px;
+  }
+}
+.carousel-indicators {
+  margin-bottom: -23px;
+}
+#demo-1 ul li {
+  background-color: black;
+}
+.img-box {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.img-box img:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #343a40 !important;
+  padding: 0.8rem 0.8rem;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: 400;
+  color: white !important;
+  text-decoration: none;
+  -webkit-transition: background 0.3s ease !important;
+  transition: background 0.3s ease !important;
+}
+
+.add-to-cart:hover {
+  background: #c4c4c4 !important;
+  color: black !important;
+  text-decoration: none;
+}
+
+.checked,
+.price span {
+  color: #ff9f1a;
+}
+
+.title-page {
+  letter-spacing: 20px;
+}

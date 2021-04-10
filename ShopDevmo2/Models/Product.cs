@@ -28,6 +28,28 @@ namespace ShopDevmo2.Models
         [Display(Name = "Product ID")]
         public long CategoryId { get; set; }
 
+        [MaxLength(250)]
+        [Display(Name = "Feature")]
+        public string Feature { get; set; }
+
+        [Display(Name = "Gender")]
+        public bool Gender { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Brand")]
+        public string Brand { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Color")]
+        public string Color { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Material")]
+        public string Material { get; set; }
+
+        [Display(Name = "Price")]
+        public decimal Price { get; set; }
+
         [MaxLength(500, ErrorMessage = "Content is too length.")]
         public string Description { get; set; }
 
@@ -36,8 +58,8 @@ namespace ShopDevmo2.Models
         public string FeatureImage { get; set; }
 
         //TODO: add product quantity
-
         public PublishStatus Status { get; set; }
+
         [Display(Name = "Publish on date")]
         [DisplayFormat(DataFormatString = "yyyy-MM-dd")]
         public DateTime PublishDate { get; set; }

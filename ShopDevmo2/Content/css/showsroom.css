@@ -1,0 +1,38 @@
+.showroom > div > .card:hover {
+  box-shadow: 0 10px 10px -10px #777;
+}
+
+.card-aboutus > div > .card:hover {
+  box-shadow: 0 10px 10px -10px #777;
+  background-color: #1b1b1b;
+}
+
+.card-aboutus > div > .card:hover h2 {
+  color: white;
+}
+
+.card-aboutus > div > .card:hover i {
+  color: white !important;
+}
+
+.jumbotron {
+  background-image: url('../images_final/jumbotron/jumbotron-bag6.jpg');
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .card-aboutus a {
+  color: black;
+  background-color: whitesmoke;
+} */
+
+center h2 {
+  color: black;
+  /* background-color: whitesmoke; */
+}
+
+h1 {
+  letter-spacing: 15px;
+}

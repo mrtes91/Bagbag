@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<Shop.Models.Category>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Categories Management";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -21,20 +22,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Parent.DisplayText)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayText)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parent.DisplayText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayText)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

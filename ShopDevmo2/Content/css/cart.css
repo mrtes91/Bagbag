@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: poppins, arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+.content-1 {
+  padding-left: 20px 0;
+}
+
+/* .modal-info {
+  width: 60%;
+  height: 100%;
+  float: right;
+  position: relative;
+}
+
+.modal-info .info {
+  width: 90%;
+  height: 85%;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0%, -50%);
+} */
+
+.info h2 {
+  font-size: 2.25rem;
+  margin-left: 2.8rem;
+}
+
+.info form .form-list {
+  margin-top: 1.5rem;
+  margin-left: 3.5rem;
+}
+
+form {
+  border-radius: 10px;
+}
+
+.info form .form-list .form-list-row {
+  margin: 1rem 0;
+}
+
+.info form .form-list .form-list-row label {
+  font-size: 1rem;
+}
+
+.info form .form-list .form-list-row input {
+  width: 70%;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  border: none;
+  display: inline-block;
+  border-bottom: solid 2px #999;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.info form .form-list .form-list-row input:focus {
+  border-color: #cdb196;
+}
+
+.info form .form-list .form-list-row .user .fa-user {
+  color: #999;
+  font-size: 1rem;
+}
+
+.info form .form-list .form-list-row .user input {
+  position: relative;
+  left: -16px;
+  padding-left: 30px;
+}
+
+.info form .form-list .form-list-row .number .fa-credit-card {
+  color: #999;
+  font-size: 1rem;
+}
+
+.info form .form-list .form-list-row .number input {
+  position: relative;
+  left: -20px;
+  padding-left: 30px;
+}
+
+.info form .form-list .form-list-row .date {
+  float: left;
+}
+
+.info form .form-list .form-list-row .date input {
+  width: 60px;
+  text-align: center;
+}
+
+.info form .form-list .form-list-row .date .year {
+  margin-left: 1.5rem;
+}
+
+.info form .form-list .form-list-row .cvc {
+  float: left;
+  margin-left: 6rem;
+  text-align: center;
+}
+
+.info form .form-list .form-list-row .cvc .fa-question-circle {
+  color: dodgerblue;
+  display: inline-block;
+  position: relative;
+  left: 0.75rem;
+}
+
+.info form .form-list .form-list-row .cvc input {
+  width: 70px;
+  text-align: center;
+}
+
+.info form .form-list .form-list-row .checkbox {
+  margin-top: 2rem;
+}
+
+.info form .form-list .form-list-row .checkbox input {
+  width: auto;
+}
+
+.info form .form-list .form-list-row .checkbox span {
+  font-size: 0.8rem;
+}
+
+.info form button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 40px;
+  color: white;
+  font-size: 1rem;
+  margin-left: 9.5rem;
+  padding: 0px 35px;
+  position: relative;
+  bottom: 0;
+  border: none;
+  /* border-radius: 0px; */
+  background-color: #343a40;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.info form button:hover {
+  background-color: #c4c4c4;
+  color: black;
+}
+
+button a {
+  color: whitesmoke;
+}
+
+button a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: inherit;
+}
+
+.product {
+  background-color: #f6f5f3;
+}
+
+#balo,
+#sling {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
