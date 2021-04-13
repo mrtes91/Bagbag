@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title | Welcome to BagBag</title>
+    <title>@ViewBag.Title | BagBag</title>
     @*@Styles.Render("~/Content/css")*@
     @Styles.Render("~/Content/adminlte/css")
     @Styles.Render("~/Content/MainIndex/css")
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 1200.88px;">
+    <div class="container" style="min-height: 1200.88px;">
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
@@ -146,6 +146,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/adminlte")
+    @Scripts.Render("~/bundles/bagbag")
     @RenderSection("scripts", required: false)
+    @*  RenderSection:
+        Được gọi trong Layout
+        Được khai báo trong các trang kế thừa
+        Các tham số required chỉ định thông báo lỗi hay không khi tìm section*@
 </body>
 </html>

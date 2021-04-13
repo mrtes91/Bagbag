@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace ShopDevmo2.Models
 {
@@ -50,6 +51,7 @@ namespace ShopDevmo2.Models
         [Display(Name = "Price")]
         public decimal Price { get; set; }
 
+        [AllowHtml]
         [MaxLength(500, ErrorMessage = "Content is too length.")]
         public string Description { get; set; }
 
