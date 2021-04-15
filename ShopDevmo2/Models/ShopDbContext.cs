@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using ShopDevmo2.Models;
 
-namespace Shop.Models
+namespace ShopDevmo2.Models
 {
     public class ShopDbContext : DbContext
     {

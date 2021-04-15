@@ -1,4 +1,4 @@
-namespace Shop.Models
+namespace ShopDevmo2.Models
 {
     using ShopDevmo2.Models;
     using System;
