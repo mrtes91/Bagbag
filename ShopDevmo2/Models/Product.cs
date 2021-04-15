@@ -14,12 +14,12 @@ namespace ShopDevmo2.Models
         public Product()
         {
             //this.OrderDetails = new HashSet<OrderDetail>();
-            this.Prices = new HashSet<Price>();
+            //this.Prices = new HashSet<Price>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }    // implicit PK, Identity field
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // implicit PK, Identity field
+        public long Id { get; set; }    
 
         [MaxLength(250)]
         [Display(Name = "Product name")]
@@ -28,10 +28,6 @@ namespace ShopDevmo2.Models
         [Required]
         [Display(Name = "Product ID")]
         public long CategoryId { get; set; }
-
-        [MaxLength(250)]
-        [Display(Name = "Feature")]
-        public string Feature { get; set; }
 
         [Display(Name = "Gender")]
         public bool Gender { get; set; }
@@ -55,10 +51,6 @@ namespace ShopDevmo2.Models
         [MaxLength(500, ErrorMessage = "Content is too length.")]
         public string Description { get; set; }
 
-        [MaxLength(250)]
-        [Display(Name = "Featured image")]
-        public string FeatureImage { get; set; }
-
         //TODO: add product quantity
         public PublishStatus Status { get; set; }
 
@@ -66,7 +58,11 @@ namespace ShopDevmo2.Models
         [DisplayFormat(DataFormatString = "yyyy-MM-dd")]
         public DateTime PublishDate { get; set; }
 
+        [MaxLength(250)]
+        [Display(Name = "Featured image")]
+        public string FeatureImage { get; set; }
+
         public virtual Category Category { get; set; }
-        public virtual ICollection<Price> Prices { get; set; }
+        //public virtual ICollection<Price> Prices { get; set; }
     }
 }

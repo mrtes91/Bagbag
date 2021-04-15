@@ -1,31 +1,39 @@
-﻿@model Shop.Models.Category
+﻿@model Shop.Models.User
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Category</h4>
+    <h4>User</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Parent.DisplayText)
+            @Html.DisplayNameFor(model => model.Account.LoginName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Parent.DisplayText)
+            @Html.DisplayFor(model => model.Account.LoginName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DisplayText)
+            @Html.DisplayNameFor(model => model.DisplayName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DisplayText)
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roles)
         </dd>
 
     </dl>

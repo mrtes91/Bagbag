@@ -7,116 +7,115 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Shop.Models;
-using ShopDevmo2.Models;
 
 namespace ShopDevmo2.Areas.Admin.Controllers
 {
-    public class ProductsController : Controller
+    public class UsersController : Controller
     {
         private ShopDbContext db = new ShopDbContext();
 
-        // GET: Admin/Products
+        // GET: Admin/Users
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            var users = db.Users.Include(u => u.Account);
+            return View(users.ToList());
         }
 
-        // GET: Admin/Products/Details/5
+        // GET: Admin/Users/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(user);
         }
 
-        // GET: Admin/Products/Create
+        // GET: Admin/Users/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText");
+            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "LoginName");
             return View();
         }
 
-        // POST: Admin/Products/Create
+        // POST: Admin/Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CategoryId,Gender,Brand,Color,Material,Price,Description,Status,PublishDate,FeatureImage")] Product product)
+        public ActionResult Create([Bind(Include = "Id,DisplayName,Roles,AccountId")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "LoginName", user.AccountId);
+            return View(user);
         }
 
-        // GET: Admin/Products/Edit/5
+        // GET: Admin/Users/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "LoginName", user.AccountId);
+            return View(user);
         }
 
-        // POST: Admin/Products/Edit/5
+        // POST: Admin/Users/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CategoryId,Gender,Brand,Color,Material,Price,Description,Status,PublishDate,FeatureImage")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,DisplayName,Roles,AccountId")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "LoginName", user.AccountId);
+            return View(user);
         }
 
-        // GET: Admin/Products/Delete/5
+        // GET: Admin/Users/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(user);
         }
 
-        // POST: Admin/Products/Delete/5
+        // POST: Admin/Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
