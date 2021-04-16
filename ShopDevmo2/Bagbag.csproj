@@ -163,7 +163,6 @@
     <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
-    <Compile Include="Areas\Admin\Views\UsersController.cs" />
     <Compile Include="Common\Constants\Naming.cs" />
     <Compile Include="Common\ExceptionHandlerFilter.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -191,6 +190,10 @@
     <Compile Include="Migrations\202104141710039_product1.cs" />
     <Compile Include="Migrations\202104141710039_product1.Designer.cs">
       <DependentUpon>202104141710039_product1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104160700051_updateDB.cs" />
+    <Compile Include="Migrations\202104160700051_updateDB.Designer.cs">
+      <DependentUpon>202104160700051_updateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -8251,6 +8254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104141710039_product1.resx">
       <DependentUpon>202104141710039_product1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104160700051_updateDB.resx">
+      <DependentUpon>202104160700051_updateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
