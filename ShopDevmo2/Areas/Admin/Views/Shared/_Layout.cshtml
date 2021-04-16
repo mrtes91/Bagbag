@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using ShopDevmo2.Common.Constants
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -135,7 +137,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="~/Content/img/admin/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">CP202008L</span>
             </a>
 
             <!-- Sidebar -->
@@ -146,7 +148,7 @@
                         <img src="~/Content/img/admin/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">Admin</a>
                     </div>
 
                     <!-- Dropdown Login -->
@@ -185,13 +187,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/Admin/categories/Create" class="nav-link">
+                                    <a href="@Url.Action("Create", Controllers.CATEGORIES)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add new</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/admin/categories/index" class="nav-link">
+                                    <a href="@Url.Action("Index", Controllers.CATEGORIES)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Categories</p>
                                     </a>
@@ -210,13 +212,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/Admin/products/Create" class="nav-link">
+                                    <a href="@Url.Action("Create", Controllers.PRODUCTS)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add new</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/admin/products/index" class="nav-link">
+                                    <a href="@Url.Action("Index", Controllers.PRODUCTS)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Products</p>
                                     </a>
@@ -235,13 +237,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/Admin/orders/Create" class="nav-link">
+                                    <a href="@Url.Action("Create", Controllers.ORDERS)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add new</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="https://localhost:44388/Admin/orders/Index" class="nav-link">
+                                    <a href="@Url.Action("Index", Controllers.ORDERS)" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Oders</p>
                                     </a>
@@ -262,13 +264,13 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="https://localhost:44388/Admin/users/Create" class="nav-link">
+                                        <a href="@Url.Action("Create", Controllers.USERS)" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add new</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="https://localhost:44388/Admin/users/Index" class="nav-link">
+                                        <a href="@Url.Action("Index", Controllers.USERS)" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>All Users</p>
                                         </a>
