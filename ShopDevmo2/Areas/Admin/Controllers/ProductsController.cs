@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 using ShopDevmo2.Models;
+using ShopDevmo2.Common;
+using ShopDevmo2.Models.ViewModels;
+using System.Configuration;
 
 namespace ShopDevmo2.Areas.Admin.Controllers
 {
     public class ProductsController : Controller
     {
         private ShopDbContext db = new ShopDbContext();
+
+        [Authorize]
 
         // GET: Admin/Products
         public ActionResult Index()

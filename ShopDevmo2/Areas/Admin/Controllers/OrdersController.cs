@@ -14,6 +14,8 @@ namespace ShopDevmo2.Areas.Admin.Controllers
     {
         private ShopDbContext db = new ShopDbContext();
 
+        [Authorize]
+
         // GET: Admin/Orders
         public ActionResult Index()
         {
