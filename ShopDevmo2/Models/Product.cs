@@ -19,7 +19,7 @@ namespace ShopDevmo2.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // implicit PK, Identity field
-        public long Id { get; set; }    
+        public long Id { get; set; }
 
         [MaxLength(250)]
         [Display(Name = "Product name")]
@@ -55,7 +55,8 @@ namespace ShopDevmo2.Models
         public PublishStatus Status { get; set; }
 
         [Display(Name = "Publish on date")]
-        [DisplayFormat(DataFormatString = "yyyy-MM-dd")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", NullDisplayText = "", ApplyFormatInEditMode = true)]
         public DateTime PublishDate { get; set; }
 
         [MaxLength(250)]

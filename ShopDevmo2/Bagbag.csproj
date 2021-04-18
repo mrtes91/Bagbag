@@ -166,6 +166,7 @@
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Common\Constants\Naming.cs" />
     <Compile Include="Common\ExceptionHandlerFilter.cs" />
+    <Compile Include="Common\MyHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\ShopDbContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\ProductView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
