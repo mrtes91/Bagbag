@@ -1,14 +1,20 @@
-﻿using ShopDevmo2.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Web.Mvc;
+﻿//using ShopDevmo2.Models;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
+//using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations.Schema;
+//using System.Web.Mvc;
 
 namespace ShopDevmo2.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web.Script.Serialization;
+
     public class Product
     {
         public Product()
@@ -29,8 +35,8 @@ namespace ShopDevmo2.Models
         [Display(Name = "Product ID")]
         public long CategoryId { get; set; }
 
-        [Display(Name = "Gender")]
-        public bool Gender { get; set; }
+        //[Display(Name = "Gender")]
+        //public bool Gender { get; set; }
 
         [MaxLength(250)]
         [Display(Name = "Brand")]
@@ -47,7 +53,7 @@ namespace ShopDevmo2.Models
         [Display(Name = "Price")]
         public decimal Price { get; set; }
 
-        [AllowHtml]
+        //[AllowHtml]
         [MaxLength(500, ErrorMessage = "Content is too length.")]
         public string Description { get; set; }
 

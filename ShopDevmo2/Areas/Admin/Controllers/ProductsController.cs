@@ -15,38 +15,40 @@ using System.Configuration;
 
 namespace ShopDevmo2.Areas.Admin.Controllers
 {
-    public class ProductsController : Controller
+    [Authorize]
+    //[CustomActionFilter]
+    [ExceptionHandlerFilter]
+    public class ProductsController : BaseController
     {
         private ShopDbContext db = new ShopDbContext();
 
-        [Authorize]
-
         // GET: Admin/Products
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            return View(await products.ToListAsync());
         }
 
         // GET: Admin/Products/Details/5
-        public ActionResult Details(long? id)
+        public async Task<ActionResult> Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = await db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
+
             return View(product);
         }
 
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText");
+            ViewBag.Categories = new SelectList(db.Categories, "Id", "DisplayText");
             return View();
         }
 
@@ -55,33 +57,39 @@ namespace ShopDevmo2.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CategoryId,Gender,Brand,Color,Material,Price,Description,Status,PublishDate,FeatureImage")] Product product)
+        public async Task<ActionResult> Create(ProductView viewModel)
         {
+            Product product = new Product();
             if (ModelState.IsValid)
             {
+
+                viewModel.CopyToProduct(ref product);
+                product.FeatureImage = SaveFile(viewModel.UploadFile, product.FeatureImage);
                 db.Products.Add(product);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
+                SetSuccessNotification();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", viewModel.CategoryId);
+            return View(viewModel);
         }
 
         // GET: Admin/Products/Edit/5
-        public ActionResult Edit(long? id)
+        public async Task<ActionResult> Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = await db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.Categories = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);    // access from view without "ViewBag"
+            var viewModel = new ProductView(product);
+            return View(viewModel);
         }
 
         // POST: Admin/Products/Edit/5
@@ -89,26 +97,31 @@ namespace ShopDevmo2.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CategoryId,Gender,Brand,Color,Material,Price,Description,Status,PublishDate,FeatureImage")] Product product)
+        public async Task<ActionResult> Edit(ProductView viewModel)
         {
             if (ModelState.IsValid)
             {
+                Product product = await db.Products.FindAsync(viewModel.Id);
+                viewModel.CopyToProduct(ref product);
+                product.FeatureImage = SaveFile(viewModel.UploadFile, product.FeatureImage);
+
                 db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
+                SetSuccessNotification();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "DisplayText", product.CategoryId);
-            return View(product);
+            ViewBag.Categories = new SelectList(db.Categories, "Id", "DisplayText", viewModel.CategoryId);
+            return View(viewModel);
         }
 
         // GET: Admin/Products/Delete/5
-        public ActionResult Delete(long? id)
+        public async Task<ActionResult> Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = await db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -119,11 +132,12 @@ namespace ShopDevmo2.Areas.Admin.Controllers
         // POST: Admin/Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
+        public async Task<ActionResult> DeleteConfirmed(long id)
         {
-            Product product = db.Products.Find(id);
+            Product product = await db.Products.FindAsync(id);
             db.Products.Remove(product);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
+            SetSuccessNotification();
             return RedirectToAction("Index");
         }
 
@@ -134,6 +148,37 @@ namespace ShopDevmo2.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// Replace previous file by new upload file.
+        /// In case there is no upload file, keep previous file if existed.
+        /// </summary>
+        /// <param name="postedFile"></param>
+        /// <param name="previousUrl"></param>
+        /// <returns></returns>
+        private string SaveFile(HttpPostedFileBase postedFile, string previousUrl = null)
+        {
+            if (postedFile == null)
+            {
+                return !string.IsNullOrEmpty(previousUrl) ? previousUrl : null;
+            }
+            string relativePath = ConfigurationManager.AppSettings.Get("shop:uploadsDir:products") ?? "/Uploads/Products";
+            string physicFolderPath = Server.MapPath(relativePath);
+            string previousFilePath = Server.MapPath(Server.UrlDecode(previousUrl));
+
+            // Create upload folder if not exist
+            if (!Directory.Exists(physicFolderPath))
+            {
+                Directory.CreateDirectory(physicFolderPath);
+            }
+            if (!string.IsNullOrEmpty(previousFilePath) && System.IO.File.Exists(previousFilePath))
+            {
+                System.IO.File.Delete(previousFilePath);
+            }
+
+            postedFile.SaveAs(Path.Combine(physicFolderPath, postedFile.FileName));
+            return Server.UrlEncode(relativePath + "/" + postedFile.FileName);
         }
     }
 }

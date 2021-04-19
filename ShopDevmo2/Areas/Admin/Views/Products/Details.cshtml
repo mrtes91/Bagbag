@@ -27,13 +27,13 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Brand)
@@ -100,6 +100,7 @@
         </dd>
 
     </dl>
+    <img src="@Server.UrlDecode(Model.FeatureImage)" style="max-height:50px;" alt="@Model.Name" />
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

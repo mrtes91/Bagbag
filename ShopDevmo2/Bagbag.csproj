@@ -197,6 +197,14 @@
     <Compile Include="Migrations\202104160700051_updateDB.Designer.cs">
       <DependentUpon>202104160700051_updateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104181653144_updateProduct1.cs" />
+    <Compile Include="Migrations\202104181653144_updateProduct1.Designer.cs">
+      <DependentUpon>202104181653144_updateProduct1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104181727042_updateProduct11.cs" />
+    <Compile Include="Migrations\202104181727042_updateProduct11.Designer.cs">
+      <DependentUpon>202104181727042_updateProduct11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
@@ -214,6 +222,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
     <Compile Include="Models\ViewModels\ProductView.cs" />
+    <Compile Include="Models\ViewModels\UserAccountView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -8260,6 +8269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104160700051_updateDB.resx">
       <DependentUpon>202104160700051_updateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104181653144_updateProduct1.resx">
+      <DependentUpon>202104181653144_updateProduct1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104181727042_updateProduct11.resx">
+      <DependentUpon>202104181727042_updateProduct11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
