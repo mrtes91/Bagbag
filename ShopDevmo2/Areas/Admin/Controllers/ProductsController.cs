@@ -16,7 +16,7 @@ using System.Configuration;
 namespace ShopDevmo2.Areas.Admin.Controllers
 {
     [Authorize]
-    //[CustomActionFilter]
+    [CustomActionFilter]
     [ExceptionHandlerFilter]
     public class ProductsController : BaseController
     {

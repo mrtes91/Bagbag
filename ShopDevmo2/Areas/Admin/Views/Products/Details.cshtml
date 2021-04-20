@@ -95,9 +95,9 @@
             @Html.DisplayNameFor(model => model.FeatureImage)
         </dt>
 
-        <dd>
+        @*<dd>
             @Html.DisplayFor(model => model.FeatureImage)
-        </dd>
+        </dd>*@
 
     </dl>
     <img src="@Server.UrlDecode(Model.FeatureImage)" style="max-height:50px;" alt="@Model.Name" />

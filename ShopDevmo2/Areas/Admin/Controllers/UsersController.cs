@@ -14,7 +14,7 @@ using ShopDevmo2.Common;
 namespace ShopDevmo2.Areas.Admin.Controllers
 {
     [Authorize(Roles = "admin")]
-    //[CustomActionFilter]
+    [CustomActionFilter]
     [ExceptionHandlerFilter]
     public class UsersController : Controller
     {

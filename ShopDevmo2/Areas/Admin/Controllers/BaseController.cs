@@ -34,7 +34,8 @@ namespace ShopDevmo2.Areas.Admin.Controllers
         {
             get
             {
-                if (Session["shop:user"] is Account account)
+                Account account = Session["shop:user"] as Account;
+                if (account != null)
                 {
                     return account;
                 }

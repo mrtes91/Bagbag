@@ -165,9 +165,12 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Common\Constants\Naming.cs" />
+    <Compile Include="Common\CustomActionFilter.cs" />
+    <Compile Include="Common\DataUtils.cs" />
     <Compile Include="Common\ExceptionHandlerFilter.cs" />
     <Compile Include="Common\MyHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -8247,6 +8250,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\libs\angularjs\angular\i18n\ngLocale\" />
     <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
