@@ -5,48 +5,104 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h1>Login</h1>
+@Styles.Render("~/Content/Login/css")
+
 <hr />
-<div class="row">
-
-    <div class="col-md-6 col-md-offset-3">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-horizontal">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.LoginName, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.LoginName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.LoginName, "", new { @class = "text-danger" })
+@*<div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LoginName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LoginName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LoginName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <div class="form-check">
-                            @Html.CheckBoxFor(model => model.RememberLogin, new { @class = "form-check-input" })
-                            @Html.LabelFor(model => model.RememberLogin, htmlAttributes: new { @class = "form-check-label col-md-4" })
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="form-check">
+                                @Html.CheckBoxFor(model => model.RememberLogin, new { @class = "form-check-input" })
+                                @Html.LabelFor(model => model.RememberLogin, htmlAttributes: new { @class = "form-check-label col-md-4" })
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Sign in" class="btn btn-info" />
                         </div>
                     </div>
                 </div>
+            }
+        </div>
+    </div>*@
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Sign in" class="btn btn-info" />
+<main class="container">
+    <div class="row">
+        <aside class="col-lg-5 d-none d-md-block mx-0">
+            <!-- <a href="index.html"><img src="images_final/logo/logoheader.png" width="190px" /></a><br /> -->
+            WELCOME<br />
+            BACK
+        </aside>
+        <section class="col-lg-7 mx-0">
+            <div class="container">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-horizontal">
+                        <div class="reg">
+                            <h1>Sign In <a href="index.html">BagBag</a></h1>
+                            <br />
+                            Become a customer? <a class="a-signin" href="signup.html">Sign Up</a>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LoginName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.LoginName, new { htmlAttributes = new { @class = "form-control rounded-0" } })
+                                @Html.ValidationMessageFor(model => model.LoginName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control  rounded-0" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    @Html.CheckBoxFor(model => model.RememberLogin, new { @class = "form-check-input" })
+                                    @Html.LabelFor(model => model.RememberLogin, htmlAttributes: new { @class = "form-check-label col-md-4" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Sign In" class="submit rounded-0" />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
-        }
+        </section>
     </div>
-</div>
+</main>
+<hr />

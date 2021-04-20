@@ -64,6 +64,10 @@ namespace ShopDevmo2
                 "~/Content/css/bootstrap.min.css",
                 "~/Content/css/all.min.css"));
 
+            // Style bundle for Login
+            bundles.Add(new StyleBundle("~/Content/Login/css").Include(
+                "~/Content/css/signin.css"));
+
             // Libs bundle for Main Index
             bundles.Add(new StyleBundle("~/Content/MainIndex/libs").Include(
                 "~/Content/libs/font-awesome/css/font-awesome.css",

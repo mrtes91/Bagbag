@@ -263,6 +263,7 @@
     <Content Include="Content\fontawesome\all.min.css" />
     <Content Include="Content\icheck-bootstrap.min.css" />
     <Content Include="Content\images_final\jumbotron\jumbotron-bag6.jpg" />
+    <Content Include="Content\images_final\sign\signin.jpg" />
     <Content Include="Content\img\admin\AdminLTELogo.png" />
     <Content Include="Content\img\admin\avatar.png" />
     <Content Include="Content\img\admin\avatar2.png" />
