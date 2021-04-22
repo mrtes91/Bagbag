@@ -18,6 +18,15 @@ namespace ShopDevmo2.Controllers
             return View(products);
         }
 
+        public ActionResult Details(int id)
+        {
+            var product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
 
+            return View(product);
+        }
     }
 }

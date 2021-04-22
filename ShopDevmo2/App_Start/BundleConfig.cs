@@ -73,6 +73,10 @@ namespace ShopDevmo2
             bundles.Add(new StyleBundle("~/Content/Categories/css").Include(
                 "~/Content/css/categories.css"));
 
+            // Style bundle for Product Details
+            bundles.Add(new StyleBundle("~/Content/Details/css").Include(
+                "~/Content/css/details.css"));
+
             // Libs bundle for Main Index
             bundles.Add(new StyleBundle("~/Content/MainIndex/libs").Include(
                 "~/Content/libs/font-awesome/css/font-awesome.css",

@@ -1,66 +1,169 @@
 ﻿@model ShopDevmo2.Models.Product
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h2>Index</h2>
+@Styles.Render("~/Content/Details/css")
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.DisplayText)
-        </dt>
+@*<div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.DisplayText)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.DisplayText)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Category.DisplayText)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dd>
-            @Html.Raw(Model.Description)
-        </dd>
+            <dd>
+                @Html.Raw(Model.Description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FeatureImage)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.FeatureImage)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FeatureImage)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.FeatureImage)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublishDate)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.PublishDate)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+<!-- !MAIN -->
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-8">
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                        <div class="tab-pane" id="pic-2"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                        <div class="tab-pane" id="pic-3"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                        <div class="tab-pane" id="pic-4"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                        <div class="tab-pane" id="pic-5"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                        <div class="tab-pane" id="pic-6"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <li class="active">
+                            <a data-target="#pic-1" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-2" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-3" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-4" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-5" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-6" data-toggle="tab"><img data-u="image" src="@Server.UrlDecode(Model.FeatureImage)" /></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details col-md-4">
+                    <h3 class="product-title">@Html.DisplayFor(model => model.Name)</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span> <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">123 reviews</span>
+                        <a href="#" target="_blank">
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </a>
+                    </div>
+                    <p class="vote"><strong>91%</strong> 90 of buyers are satisfied with this product <strong>(87 voted)</strong></p>
+                    <p class="colors"><h6>Colors:</h6> @Html.DisplayFor(model => model.Color) <span class="color black not-available" data-toggle="tooltip" title="Not In store"></span></p>
+                    <h6 class="sizes">Size:</h6>
+                    <p>{{dimensions}}<br />(Length x Height x Width)</p>
+                    <div>
+                        <h4 class="price">@Html.DisplayFor(model => model.Price) $</h4>
+                        <p class="float-right in-stock">In stock</p>
+                    </div>
+                    <div class="action">
+                        <a href="cart.html" target="_self"> <button class="add-to-cart btn-default" type="button">Place in cart</button> </a>
+                    </div>
+                    <p class="mt-4 mb-4">Complimentary delivery or Collect-in-Store.</p>
+                    <div class="action">
+                        <a href="showroom.html" target="_self"> <button class="find-in-store btn-default" type="button">Find in store</button> </a>
+                    </div>
+                    <p class="product-description mt-5">@Html.DisplayFor(model => model.Description)</p>
+                    <div class="policy mt-5">
+                        <i class="fa fa-credit-card fa-2x"></i>
+                        <div class="sub-policy">
+                            <a href="payment.html" target="_self"><h6 class="mt3">PAYMENT</h6></a>
+                            <p class="sub-payment">Credit Card, Debit Card, Paypal, Apple Pay</p>
+                        </div>
+                    </div>
+                    <div class="policy">
+                        <i class="fa fa-exchange fa-2x"></i>
+                        <div class="sub-policy">
+                            <a href="exchange.html" target="_self"><h6 class="mt3">RETURNS & EXCHANGES</h6></a>
+                            <p class="sub-payment">Complimentary</p>
+                        </div>
+                    </div>
+                    <div class="policy">
+                        <i class="fa fa-truck fa-2x"></i>
+                        <div class="sub-policy">
+                            <h6 class="mt3">PACKAGING</h6>
+                            <p class="sub-payment">Contemporary and eco-friendly wrapping inspired by our Heritage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<hr class="container" />
+<h2 class="container mt-3">
+    <center>JUST FOR YOU</center>
+</h2>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
