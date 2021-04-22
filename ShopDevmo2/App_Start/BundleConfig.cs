@@ -47,6 +47,7 @@ namespace ShopDevmo2
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
             // Style bundle for AdminLTE
             bundles.Add(new StyleBundle("~/Content/adminlte/css").Include(
                         "~/Content/fontawesome/all.min.css",
@@ -67,6 +68,10 @@ namespace ShopDevmo2
             // Style bundle for Login
             bundles.Add(new StyleBundle("~/Content/Login/css").Include(
                 "~/Content/css/signin.css"));
+
+            // Style bundle for Categories
+            bundles.Add(new StyleBundle("~/Content/Categories/css").Include(
+                "~/Content/css/categories.css"));
 
             // Libs bundle for Main Index
             bundles.Add(new StyleBundle("~/Content/MainIndex/libs").Include(

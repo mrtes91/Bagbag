@@ -1,21 +1,158 @@
 ﻿@model IEnumerable<ShopDevmo2.Models.Product>
 
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Categories";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h2>Products</h2>
+@Styles.Render("~/Content/Categories/css")
 
+@*<h2>Products</h2>*@
+
+@*<div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <img src="@Server.UrlDecode(item.FeatureImage)" class="img-thumbnail" alt="Product image" />
+                <p class="font-weight-bold">@item.Name</p>
+                <p>@item.Price</p>
+                <p>@Html.ActionLink("Add to Cart", "AddToCart", new { controller = "Cart", id = item.Id }, new { @class = "btn btn-danger" })</p>
+                <p><a href="#" class="badge">@item.Category.DisplayText</a></p>
+            </div>
+        }
+    </div>*@
+
+<!-- ! CONTENT -->
 <div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4">
-            <img src="@Server.UrlDecode(item.FeatureImage)" class="img-thumbnail" alt="Product image" />
-            <p class="font-weight-bold">@item.Name</p>
-            <p>@item.Price</p>
-            <p>@Html.ActionLink("Add to Cart", "AddToCart", new { controller = "Cart", id = item.Id }, new { @class = "btn btn-danger" })</p>
-            <p><a href="#" class="badge">@item.Category.DisplayText</a></p>
+    <div class="row">
+        <!-- ! ASIDE -->
+        <div class="col-lg-3">
+            <!-- ! SEARCH -->
+            <div class="mb-3">
+                <h1 class="my-0">Search</h1>
+                <div class="list-group">
+                    <input class="my-1 form-control" name="search" type="text" ng-model="search" placeholder="Search for Products and Brands..." />
+                </div>
+            </div>
+
+            <!-- ! FILTER -->
+            <div class="result-filter-wrapper">
+                <form class="content-widget">
+                    <span class="result-filter-label"><h1>Filter</h1></span>
+                    <div class="selection-bar" style="clear: left">
+                        <div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.feature">
+                                    <option value="" selected="selected disabled">By Feature</option>
+                                    <option value="backpack">Backpack</option>
+                                    <option value="handbag">Handbag</option>
+                                    <option value="slingbag">Slingbag</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.brandvalue">
+                                    <option value="" selected="selected disabled">By Brand</option>
+                                    <option value="brand-361°">361°</option>
+                                    <option value="brand-Adidas">Adidas</option>
+                                    <option value="brand-ALDO">ALDO</option>
+                                    <option value="brand-Bvlgari">Bvlgari</option>
+                                    <option value="brand-Coach">Coach</option>
+                                    <option value="brand-Champion">Champion</option>
+                                    <option value="brand-Fiorelli">Fiorelli</option>
+                                    <option value="brand-Gucci">Gucci</option>
+                                    <option value="brand-Guess">Guess</option>
+                                    <option value="brand-Herschel">Herschel</option>
+                                    <option value="brand-KateSpade">Kate Spade</option>
+                                    <option value="brand-Kipling">Kipling</option>
+                                    <option value="brand-Nike">Nike</option>
+                                    <option value="brand-Oxhide">Oxhide</option>
+                                    <option value="brand-Playboy">Playboy</option>
+                                    <option value="brand-Puma">Puma</option>
+                                    <option value="brand-Superdry">Superdry</option>
+                                    <option value="brand-UnderArmour">Under Armour</option>
+                                    <option value="brand-YvesSaintLaurent">Yves Saint Laurent</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.sex">
+                                    <option value="" selected="selected disabled">By Gender</option>
+                                    <option value="bag-men">Men</option>
+                                    <option value="bag-women">Women</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.colorvalue">
+                                    <option value="" selected="selected disabled">By Color</option>
+                                    <option value="color-Black">Black</option>
+                                    <option value="color-Green">Green</option>
+                                    <option value="color-Grey">Grey</option>
+                                    <option value="color-Pink">Pink</option>
+                                    <option value="color-Red">Red</option>
+                                    <option value="color-White">White</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.materialvalue">
+                                    <option value="" selected="selected disabled">By Material</option>
+                                    <option value="mat-Lambskin">Lambskin</option>
+                                    <option value="mat-Leather">Leather</option>
+                                    <option value="mat-Nylon">Nylon</option>
+                                    <option value="mat-Polyamide">Polyamide</option>
+                                    <option value="mat-Polyester">Polyester</option>
+                                    <option value="mat-Polyurethane">Polyurethane</option>
+                                    <option value="mat-Saffiano">Saffiano</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper mb-3">
+                                <select class="custom-select selectbox" ng-model="search.byprice">
+                                    <option value="" selected="selected disabled">By Price</option>
+                                    <option value="under-100">< 100 $</option>
+                                    <option value="under-500">From 100$ to 499$</option>
+                                    <option value="under-1000">From 500$ to 999$</option>
+                                    <option value="under-2000">> 999$</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ! DOCUMENT -->
+            <div class="mb-3">
+                <h2 class="">Get the document</h2>
+                <div class="document">
+                    <a target="_blank" href="document/document.docx">
+                        <img src="~/Content/images_final/document/docx.png" alt="Download document" title="Download document" />
+                    </a>
+                    <a target="_blank" href="document/document.pdf"><img src="~/Content/images_final/document/pdf.png" alt="Download pdf" title="Download PDF" /></a>
+                </div>
+            </div>
         </div>
-    }
+
+        <!-- ! SECTION -->
+        <div class="col-lg-9">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="mb-3 col-lg-4 col-md-6 col-sm-12">
+                        <a target="_self" class="a-tag" href="">
+                            <div class="card card-categories pl-0">
+                                <img class="card-img img-banner" src="@Server.UrlDecode(item.FeatureImage)" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Brand: @item.Brand</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Color: @item.Color</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Material: @item.Material</h6>
+                                    <div class="buy d-flex justify-content-between align-items-center">
+                                        <div class="price text-success"><h5 class="mt-4">@item.Price $</h5></div>
+                                        <a target="_self" href="" class="btn btn-dark rounded-0 font-weight-bold mt-3"><i class="fa fa-shopping-cart"></i> DETAILS ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

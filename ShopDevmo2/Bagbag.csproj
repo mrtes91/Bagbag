@@ -263,7 +263,14 @@
     <Content Include="Content\daterangepicker.css" />
     <Content Include="Content\fontawesome\all.min.css" />
     <Content Include="Content\icheck-bootstrap.min.css" />
+    <Content Include="Content\images_final\document\docx.png" />
+    <Content Include="Content\images_final\document\pdf.png" />
+    <Content Include="Content\images_final\jumbotron\jumbotron-bag1.jpg" />
+    <Content Include="Content\images_final\jumbotron\jumbotron-bag.jpg" />
+    <Content Include="Content\images_final\jumbotron\jumbotron-bag2.jpg" />
+    <Content Include="Content\images_final\jumbotron\jumbotron-bag3.jpg" />
     <Content Include="Content\images_final\jumbotron\jumbotron-bag6.jpg" />
+    <Content Include="Content\images_final\jumbotron\jumbotron-bag7.jpg" />
     <Content Include="Content\images_final\sign\signin.jpg" />
     <Content Include="Content\img\admin\AdminLTELogo.png" />
     <Content Include="Content\img\admin\avatar.png" />
