@@ -7,62 +7,6 @@
 
 @Styles.Render("~/Content/Details/css")
 
-@*<div>
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Category.DisplayText)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Category.DisplayText)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.Raw(Model.Description)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.FeatureImage)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.FeatureImage)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Status)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Status)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.PublishDate)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PublishDate)
-            </dd>
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>*@
-
 <!-- !MAIN -->
 <div class="container">
     <div class="card">
@@ -111,7 +55,10 @@
                         </a>
                     </div>
                     <p class="vote"><strong>91%</strong> 90 of buyers are satisfied with this product <strong>(87 voted)</strong></p>
-                    <p class="colors"><h6>Colors:</h6> @Html.DisplayFor(model => model.Color) <span class="color black not-available" data-toggle="tooltip" title="Not In store"></span></p>
+                    <div>
+                        <h4 class="colors">@Html.DisplayFor(model => model.Color)</h4>
+                        <p class="float-right in-stock"><span class="color black not-available" data-toggle="tooltip" title="Not In store"></span></p>
+                    </div>
                     <h6 class="sizes">Size:</h6>
                     <p>{{dimensions}}<br />(Length x Height x Width)</p>
                     <div>
@@ -154,9 +101,9 @@
 </div>
 
 <hr class="container" />
-<h2 class="container mt-3">
-    <center>JUST FOR YOU</center>
-</h2>
+<center class="container mt-3">
+    <h2>JUST FOR YOU</h2>
+</center>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -37,7 +37,7 @@ img {
 .preview-pic {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
+    /*-ms-flex-positive: 1;*/
     flex-grow: 1;
 }
 
@@ -46,37 +46,37 @@ img {
     margin-top: 10px;
 }
 
-    .preview-thumbnail.nav-tabs li {
-        width: 14%;
-        margin-right: 2.5%;
-    }
+.preview-thumbnail.nav-tabs li {
+    width: 14%;
+    margin-right: 2.5%;
+}
 
-        .preview-thumbnail.nav-tabs li img {
-            max-width: 100%;
-            display: block;
-        }
+.preview-thumbnail.nav-tabs li img {
+    max-width: 100%;
+    display: block;
+}
 
-        .preview-thumbnail.nav-tabs li a {
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
-        }
+.preview-thumbnail.nav-tabs li a {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
 
-        .preview-thumbnail.nav-tabs li:last-of-type {
-            margin-right: 0;
-        }
+.preview-thumbnail.nav-tabs li:last-of-type {
+    margin-right: 0;
+}
 
 .tab-content {
     overflow: hidden;
 }
 
-    .tab-content img {
-        width: 100%;
-        -webkit-animation-name: opacity;
-        animation-name: opacity;
-        -webkit-animation-duration: 0.3s;
-        animation-duration: 0.3s;
-    }
+.tab-content img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
 
 .card {
     background: #eee;
@@ -137,15 +137,15 @@ img {
     font-weight: bold;
 }
 
-    .in-stock::before {
-        content: '';
-        display: inline-block;
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 100%;
-        background-color: #5c7e08;
-        margin-right: 8px;
-    }
+.in-stock::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+    background-color: #5c7e08;
+    margin-right: 8px;
+}
 
 .checked,
 .price span {
@@ -200,11 +200,11 @@ img {
     transition: background 0.3s ease !important;
 }
 
-    .add-to-cart:hover {
-        background: #c4c4c4 !important;
-        color: black !important;
-        text-decoration: none;
-    }
+.add-to-cart:hover {
+    background: #c4c4c4 !important;
+    color: black !important;
+    text-decoration: none;
+}
 
 .find-in-store {
     width: 100%;
@@ -218,30 +218,30 @@ img {
     transition: background 0.3s ease;
 }
 
-    .find-in-store:hover {
-        background: #c4c4c4;
-        color: black;
-        text-decoration: none;
-        border: #c4c4c4 solid 1px;
-    }
+.find-in-store:hover {
+    background: #c4c4c4;
+    color: black;
+    text-decoration: none;
+    border: #c4c4c4 solid 1px;
+}
 
-    .find-in-store:before {
-        font-family: fontawesome;
-        content: '\f041';
-        color: black;
-        margin-right: 10px;
-    }
+.find-in-store:before {
+    font-family: fontawesome;
+    content: '\f041';
+    color: black;
+    margin-right: 10px;
+}
 
 .not-available {
     text-align: center;
     line-height: 2em;
 }
 
-    .not-available:before {
-        font-family: fontawesome;
-        content: '\f00c';
-        color: #fff;
-    }
+.not-available:before {
+    font-family: fontawesome;
+    content: '\f00c';
+    color: #fff;
+}
 
 .black {
     background: black;
@@ -292,26 +292,26 @@ img {
     float: left;
 }
 
-    .policy h6 {
-        margin-top: 15px;
-    }
+.policy h6 {
+    margin-top: 15px;
+}
 
-    .policy i {
-        margin-top: 28px;
-        float: left;
-        margin-right: 20px;
-    }
+.policy i {
+    margin-top: 28px;
+    float: left;
+    margin-right: 20px;
+}
 
 .sub-policy {
     width: 85%;
     float: left;
 }
 
-    .sub-policy a,
-    .sub-policy a:hover {
-        text-decoration: none;
-        color: black;
-    }
+.sub-policy a,
+.sub-policy a:hover {
+    text-decoration: none;
+    color: black;
+}
 
 .policy:hover {
     cursor: pointer;
@@ -340,20 +340,20 @@ img {
     right: -30px !important;
 }
 
-    .carousel-control-next span {
-        border-radius: 100%;
-        background-color: black;
-    }
+.carousel-control-next span {
+    border-radius: 100%;
+    background-color: black;
+}
 
 .carousel-control-prev {
     width: 60px !important;
     left: -30px !important;
 }
 
-    .carousel-control-prev span {
-        border-radius: 100%;
-        background-color: black;
-    }
+.carousel-control-prev span {
+    border-radius: 100%;
+    background-color: black;
+}
 
 #demo-1 {
     display: -webkit-box;
@@ -412,15 +412,15 @@ img {
     overflow: hidden;
 }
 
-    .img-box img:hover {
-        transform: scale(1.5);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transition: 0.3s ease;
-        cursor: pointer;
-    }
+.img-box img:hover {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
 
 .policy i {
     color: black;
