@@ -113,7 +113,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-primary rounded-0 font-weight-bold mt-3" />
+                <a target="_self" href="@Url.Action("Index", "Products")" class="btn btn-secondary rounded-0 font-weight-bold mt-3">Back to List</a>
             </div>
         </div>
     </div>
@@ -121,7 +122,9 @@
 
 <div>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
+    @*<a target="_self" href="@Url.Action("Edit", "Products", new { id = Model.Id})" class="btn btn-primary rounded-0 font-weight-bold mt-3">Save</a>*@
+    
 </div>
 
 @section Scripts {

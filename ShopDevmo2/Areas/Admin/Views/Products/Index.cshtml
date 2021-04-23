@@ -9,7 +9,8 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a target="_self" href="@Url.Action("Create", "Products")" class="btn btn-warning rounded-0 font-weight-bold mt-3">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -34,19 +35,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FeatureImage)
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -73,23 +73,26 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublishDate)
-            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublishDate)
+                </td>*@
             <td>
                 @*@Html.DisplayFor(modelItem => item.FeatureImage)*@
                 <img src="@Server.UrlDecode(item.FeatureImage)" style="max-height:50px;" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                <a target="_self" href="@Url.Action("Edit", "Products", new { id = item.Id })" class="btn btn-primary rounded-0 font-weight-bold mt-3">Edit</a> 
+                <a target="_self" href="@Url.Action("Details", "Products", new { id = item.Id })" class="btn btn-info rounded-0 font-weight-bold mt-3">Details</a> 
+                <a target="_self" href="@Url.Action("Delete", "Products", new { id = item.Id })" class="btn btn-danger rounded-0 font-weight-bold mt-3">Delete</a>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
             </td>
         </tr>
     }

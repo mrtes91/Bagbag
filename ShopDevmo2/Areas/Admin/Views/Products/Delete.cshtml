@@ -29,12 +29,12 @@
         </dd>
 
         @*<dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Brand)
@@ -102,12 +102,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-danger rounded-0 font-weight-bold mt-3" />
+    <a target="_self" href="@Url.Action("Index", "Products")" class="btn btn-secondary rounded-0 font-weight-bold mt-3">Back to List</a>
+    @*<a target="_self" href="@Url.Action("Delete", "Products", new { id = Model.Id})" class="btn btn-danger rounded-0 font-weight-bold mt-3">Delete</a>*@
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
     }
 </div>

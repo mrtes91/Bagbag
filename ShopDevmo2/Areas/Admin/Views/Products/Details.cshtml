@@ -103,6 +103,8 @@
     <img src="@Server.UrlDecode(Model.FeatureImage)" style="max-height:50px;" alt="@Model.Name" />
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")*@
+    <a target="_self" href="@Url.Action("Edit", "Products", new { id = Model.Id})" class="btn btn-primary rounded-0 font-weight-bold mt-3">Edit</a>
+    <a target="_self" href="@Url.Action("Index", "Products")" class="btn btn-secondary rounded-0 font-weight-bold mt-3">Back to List</a>
 </p>
