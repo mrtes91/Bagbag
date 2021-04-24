@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="font-weight-bold">Details</h2>
 
 <div>
     <h4>Category</h4>
@@ -30,6 +30,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a target="_self" href="@Url.Action("Edit", "Categories", new { id = Model.Id})" class="btn btn-primary rounded-0 font-weight-bold mt-3">Edit</a>
+    <a target="_self" href="@Url.Action("Index", "Categories")" class="btn btn-secondary rounded-0 font-weight-bold mt-3">Back to List</a>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")*@
 </p>

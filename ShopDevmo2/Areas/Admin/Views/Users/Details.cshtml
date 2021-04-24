@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a target="_self" href="@Url.Action("Edit", "Users", new { id = Model.Id})" class="btn btn-primary rounded-0 font-weight-bold mt-3">Edit</a>
+    <a target="_self" href="@Url.Action("Index", "Users")" class="btn btn-secondary rounded-0 font-weight-bold mt-3">Back to List</a>
 </p>

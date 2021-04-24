@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="font-weight-bold">Details</h2>
 
 <div>
     <h4>Product</h4>
@@ -120,11 +120,6 @@
             @Html.DisplayNameFor(model => model.FeatureImage5)
         </dt>
         <img src="@Server.UrlDecode(Model.FeatureImage5)" style="max-height:50px;" alt="@Model.Name" />
-
-        @*<dd>
-            @Html.DisplayFor(model => model.FeatureImage)
-        </dd>*@
-
     </dl>
     
 </div>

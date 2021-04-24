@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 class="font-weight-bold">Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a target="_self" href="@Url.Action("Create", "Orders")" class="btn btn-warning rounded-0 font-weight-bold mt-3">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -36,35 +36,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Coupon.CouponCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coupon.CouponCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a target="_self" href="@Url.Action("Edit", "Orders", new { id = item.Id })" class="btn btn-primary rounded-0 font-weight-bold">Edit</a>
+                <a target="_self" href="@Url.Action("Details", "Orders", new { id = item.Id })" class="btn btn-info rounded-0 font-weight-bold">Details</a>
+                <a target="_self" href="@Url.Action("Delete", "Orders", new { id = item.Id })" class="btn btn-danger rounded-0 font-weight-bold">Delete</a>
+            </td>
+        </tr>
+    }
 
 </table>
