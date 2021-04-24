@@ -28,12 +28,12 @@
         </dd>
 
         @*<dt>
-                @Html.DisplayNameFor(model => model.Gender)
-            </dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Gender)
-            </dd>*@
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Brand)
@@ -75,7 +75,7 @@
             @Html.Raw(Model.Description)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Status)
         </dt>
 
@@ -89,18 +89,44 @@
 
         <dd>
             @Html.DisplayFor(model => model.PublishDate)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.FeatureImage)
         </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage)" style="max-height:50px;" alt="@Model.Name" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureImage1)
+        </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage1)" style="max-height:50px;" alt="@Model.Name" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureImage2)
+        </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage2)" style="max-height:50px;" alt="@Model.Name" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureImage3)
+        </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage3)" style="max-height:50px;" alt="@Model.Name" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureImage4)
+        </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage4)" style="max-height:50px;" alt="@Model.Name" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureImage5)
+        </dt>
+        <img src="@Server.UrlDecode(Model.FeatureImage5)" style="max-height:50px;" alt="@Model.Name" />
 
         @*<dd>
             @Html.DisplayFor(model => model.FeatureImage)
         </dd>*@
 
     </dl>
-    <img src="@Server.UrlDecode(Model.FeatureImage)" style="max-height:50px;" alt="@Model.Name" />
+    
 </div>
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

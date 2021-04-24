@@ -65,6 +65,11 @@ namespace ShopDevmo2.Areas.Admin.Controllers
 
                 viewModel.CopyToProduct(ref product);
                 product.FeatureImage = SaveFile(viewModel.UploadFile, product.FeatureImage);
+                product.FeatureImage1 = SaveFile(viewModel.UploadFile1, product.FeatureImage1);
+                product.FeatureImage2 = SaveFile(viewModel.UploadFile2, product.FeatureImage2);
+                product.FeatureImage3 = SaveFile(viewModel.UploadFile3, product.FeatureImage3);
+                product.FeatureImage4 = SaveFile(viewModel.UploadFile4, product.FeatureImage4);
+                product.FeatureImage5 = SaveFile(viewModel.UploadFile5, product.FeatureImage5);
                 db.Products.Add(product);
                 await db.SaveChangesAsync();
                 SetSuccessNotification();
@@ -104,6 +109,11 @@ namespace ShopDevmo2.Areas.Admin.Controllers
                 Product product = await db.Products.FindAsync(viewModel.Id);
                 viewModel.CopyToProduct(ref product);
                 product.FeatureImage = SaveFile(viewModel.UploadFile, product.FeatureImage);
+                product.FeatureImage1 = SaveFile(viewModel.UploadFile1, product.FeatureImage1);
+                product.FeatureImage2 = SaveFile(viewModel.UploadFile2, product.FeatureImage2);
+                product.FeatureImage3 = SaveFile(viewModel.UploadFile3, product.FeatureImage3);
+                product.FeatureImage4 = SaveFile(viewModel.UploadFile4, product.FeatureImage4);
+                product.FeatureImage5 = SaveFile(viewModel.UploadFile5, product.FeatureImage5);
 
                 db.Entry(product).State = EntityState.Modified;
                 await db.SaveChangesAsync();

@@ -30,15 +30,35 @@ namespace ShopDevmo2.Models.ViewModels
         [AllowHtml]
         public string Description { get; set; }
 
-        public PublishStatus Status { get; set; }
+        //public PublishStatus Status { get; set; }
 
-        [Display(Name = "Publish status")]
-        public DateTime PublishDate { get; set; }
+        //[Display(Name = "Publish status")]
+        //public DateTime PublishDate { get; set; }
 
         [Display(Name = "Featured image")]
         public string FeatureImage { get; set; }
 
+        [Display(Name = "Featured image 1")]
+        public string FeatureImage1 { get; set; }
+
+        [Display(Name = "Featured image 2")]
+        public string FeatureImage2 { get; set; }
+
+        [Display(Name = "Featured image 3")]
+        public string FeatureImage3 { get; set; }
+
+        [Display(Name = "Featured image 4")]
+        public string FeatureImage4 { get; set; }
+
+        [Display(Name = "Featured image 5")]
+        public string FeatureImage5 { get; set; }
+
         public HttpPostedFileBase UploadFile { get; set; }
+        public HttpPostedFileBase UploadFile1 { get; set; }
+        public HttpPostedFileBase UploadFile2 { get; set; }
+        public HttpPostedFileBase UploadFile3 { get; set; }
+        public HttpPostedFileBase UploadFile4 { get; set; }
+        public HttpPostedFileBase UploadFile5 { get; set; }
 
         public ProductView()
         {
@@ -59,9 +79,14 @@ namespace ShopDevmo2.Models.ViewModels
             Material = product.Material;
             Price = product.Price;
             Description = product.Description;
-            Status = product.Status;
-            PublishDate = product.PublishDate;
+            //Status = product.Status;
+            //PublishDate = product.PublishDate;
             FeatureImage = product.FeatureImage;
+            FeatureImage1 = product.FeatureImage1;
+            FeatureImage2 = product.FeatureImage2;
+            FeatureImage3 = product.FeatureImage3;
+            FeatureImage4 = product.FeatureImage4;
+            FeatureImage5 = product.FeatureImage5;
         }
 
         public void CopyToProduct(ref Product product)
@@ -74,8 +99,8 @@ namespace ShopDevmo2.Models.ViewModels
             product.Material = Material;
             product.Price = Price;
             product.Description = Description;
-            product.Status = Status;
-            product.PublishDate = PublishDate;
+            //product.Status = Status;
+            //product.PublishDate = PublishDate;
             //product.FeatureImage = FeatureImage;
         }
     }

@@ -58,16 +58,36 @@ namespace ShopDevmo2.Models
         public string Description { get; set; }
 
         //TODO: add product quantity
-        public PublishStatus Status { get; set; }
+        //public PublishStatus Status { get; set; }
 
-        [Display(Name = "Publish on date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", NullDisplayText = "", ApplyFormatInEditMode = true)]
-        public DateTime PublishDate { get; set; }
+        //[Display(Name = "Publish on date")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", NullDisplayText = "", ApplyFormatInEditMode = true)]
+        //public DateTime PublishDate { get; set; }
 
         [MaxLength(250)]
         [Display(Name = "Featured image")]
         public string FeatureImage { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Featured image 1")]
+        public string FeatureImage1 { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Featured image 2")]
+        public string FeatureImage2 { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Featured image 3")]
+        public string FeatureImage3 { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Featured image 4")]
+        public string FeatureImage4 { get; set; }
+
+        [MaxLength(250)]
+        [Display(Name = "Featured image 5")]
+        public string FeatureImage5 { get; set; }
 
         public virtual Category Category { get; set; }
         //public virtual ICollection<Price> Prices { get; set; }

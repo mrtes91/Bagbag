@@ -81,21 +81,21 @@
             CKEDITOR.replace("Description");
         </script>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PublishDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PublishDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PublishDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PublishDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PublishDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PublishDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.FeatureImage, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -107,6 +107,76 @@
                 @if (!string.IsNullOrEmpty(Model?.FeatureImage))
                 {
                     <img src="@Server.UrlDecode( Model.FeatureImage)" alt="@Model.Name" class="thumbnail product-image-thumb" />
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FeatureImage1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UploadFile1, new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadFile1, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model?.FeatureImage1))
+                {
+                    <img src="@Server.UrlDecode( Model.FeatureImage1)" alt="@Model.Name" class="thumbnail product-image-thumb" />
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FeatureImage2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UploadFile2, new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadFile2, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model?.FeatureImage2))
+                {
+                    <img src="@Server.UrlDecode( Model.FeatureImage2)" alt="@Model.Name" class="thumbnail product-image-thumb" />
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FeatureImage3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UploadFile3, new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadFile3, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model?.FeatureImage3))
+                {
+                    <img src="@Server.UrlDecode( Model.FeatureImage3)" alt="@Model.Name" class="thumbnail product-image-thumb" />
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FeatureImage4, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UploadFile4, new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadFile4, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model?.FeatureImage4))
+                {
+                    <img src="@Server.UrlDecode( Model.FeatureImage4)" alt="@Model.Name" class="thumbnail product-image-thumb" />
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FeatureImage5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UploadFile5, new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadFile5, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model?.FeatureImage5))
+                {
+                    <img src="@Server.UrlDecode( Model.FeatureImage5)" alt="@Model.Name" class="thumbnail product-image-thumb" />
                 }
             </div>
         </div>
