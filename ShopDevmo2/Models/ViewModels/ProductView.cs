@@ -25,6 +25,8 @@ namespace ShopDevmo2.Models.ViewModels
         [Display(Name = "Material")]
         public string Material { get; set; }
 
+        public string Dimentions { get; set; }
+
         public decimal Price { get; set; }
 
         [AllowHtml]
@@ -77,6 +79,7 @@ namespace ShopDevmo2.Models.ViewModels
             Brand = product.Brand;
             Color = product.Color;
             Material = product.Material;
+            Dimentions = product.Dimentions;
             Price = product.Price;
             Description = product.Description;
             //Status = product.Status;
@@ -97,6 +100,7 @@ namespace ShopDevmo2.Models.ViewModels
             product.Brand = Brand;
             product.Color = Color;
             product.Material = Material;
+            product.Dimentions = Dimentions;
             product.Price = Price;
             product.Description = Description;
             //product.Status = Status;

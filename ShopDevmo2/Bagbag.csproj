@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202104240958125_UpdateProductTable1.Designer.cs">
       <DependentUpon>202104240958125_UpdateProductTable1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104251241329_updateProductDimentions.cs" />
+    <Compile Include="Migrations\202104251241329_updateProductDimentions.Designer.cs">
+      <DependentUpon>202104251241329_updateProductDimentions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
@@ -8307,6 +8311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104240958125_UpdateProductTable1.resx">
       <DependentUpon>202104240958125_UpdateProductTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104251241329_updateProductDimentions.resx">
+      <DependentUpon>202104251241329_updateProductDimentions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

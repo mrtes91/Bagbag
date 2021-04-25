@@ -35,9 +35,6 @@ namespace ShopDevmo2.Models
         [Display(Name = "Product ID")]
         public long CategoryId { get; set; }
 
-        //[Display(Name = "Gender")]
-        //public bool Gender { get; set; }
-
         [MaxLength(250)]
         [Display(Name = "Brand")]
         public string Brand { get; set; }
@@ -49,6 +46,8 @@ namespace ShopDevmo2.Models
         [MaxLength(250)]
         [Display(Name = "Material")]
         public string Material { get; set; }
+
+        public string Dimentions { get; set; }
 
         [Display(Name = "Price")]
         public decimal Price { get; set; }

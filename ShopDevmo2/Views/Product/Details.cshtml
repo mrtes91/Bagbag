@@ -60,7 +60,8 @@
                         <p class="float-right in-stock"><span class="color black not-available" data-toggle="tooltip" title="Not In store"></span></p>
                     </div>
                     <h6 class="sizes">Size:</h6>
-                    <p>{{dimensions}}<br />(Length x Height x Width)</p>
+                    <p>@Html.DisplayFor(model => model.Dimentions)
+                    <br />(Length x Height x Width)</p>
                     <div>
                         <h4 class="price">@Html.DisplayFor(model => model.Price) $</h4>
                         <p class="float-right in-stock">In stock</p>
