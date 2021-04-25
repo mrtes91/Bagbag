@@ -1,11 +1,11 @@
 function pay() {
-  var backpack = document.getElementById('backpack').value;
-  var slingbag = document.getElementById('slingbag').value;
-  var total = backpack * 65 + slingbag * 45;
-  var span = document.getElementById('totalAmount');
-  span.innerText = '$' + total;
+    var quantity = document.getElementById('quantity_@item.ProductId').value;
+    var price = document.getElementById('price').value;
+    var total = quantity * price;
+    var span = document.getElementById('totalAmount');
+    span.innerText = '$' + total;
 }
 
 function payment() {
-  alert('Payment Success');
+    alert('Payment Success');
 }

@@ -63,51 +63,233 @@
                         <p class="float-right in-stock"><span class="color black not-available" data-toggle="tooltip" title="Not In store"></span></p>
                     </div>
                     <h6 class="sizes">Size:</h6>
-                    <p>@Html.DisplayFor(model => model.Dimentions)
-                    <br />(Length x Height x Width)</p>
-                    <div>
-                        <h4 class="price">@Html.DisplayFor(model => model.Price) $</h4>
-                        <p class="float-right in-stock">In stock</p>
+                    <p>
+                        @Html.DisplayFor(model => model.Dimentions)
+                    <br />(Length x Height x Width)
+                </p>
+                <div>
+                    <h4 class="price">@Html.DisplayFor(model => model.Price) $</h4>
+                    <p class="float-right in-stock">In stock</p>
+                </div>
+                <div class="action">
+                    <a href="@Url.Action("AddToCart", "Cart", new { id = Model.Id })" target="_self"> <button class="add-to-cart btn-default" type="button">Place in cart</button> </a>
+                </div>
+                <p class="mt-4 mb-4">Complimentary delivery or Collect-in-Store.</p>
+                <div class="action">
+                    <a href="showroom.html" target="_self"> <button class="find-in-store btn-default" type="button">Find in store</button> </a>
+                </div>
+                <p class="product-description mt-5">@Html.DisplayFor(model => model.Description)</p>
+                <div class="policy mt-5">
+                    <i class="fa fa-credit-card fa-2x"></i>
+                    <div class="sub-policy">
+                        <a href="payment.html" target="_self"><h6 class="mt3">PAYMENT</h6></a>
+                        <p class="sub-payment">Credit Card, Debit Card, Paypal, Apple Pay</p>
                     </div>
-                    <div class="action">
-                        <a href="@Url.Action("AddToCart", "Cart", new { id = Model.Id })" target="_self"> <button class="add-to-cart btn-default" type="button">Place in cart</button> </a>
+                </div>
+                <div class="policy">
+                    <i class="fa fa-exchange fa-2x"></i>
+                    <div class="sub-policy">
+                        <a href="exchange.html" target="_self"><h6 class="mt3">RETURNS & EXCHANGES</h6></a>
+                        <p class="sub-payment">Complimentary</p>
                     </div>
-                    <p class="mt-4 mb-4">Complimentary delivery or Collect-in-Store.</p>
-                    <div class="action">
-                        <a href="showroom.html" target="_self"> <button class="find-in-store btn-default" type="button">Find in store</button> </a>
-                    </div>
-                    <p class="product-description mt-5">@Html.DisplayFor(model => model.Description)</p>
-                    <div class="policy mt-5">
-                        <i class="fa fa-credit-card fa-2x"></i>
-                        <div class="sub-policy">
-                            <a href="payment.html" target="_self"><h6 class="mt3">PAYMENT</h6></a>
-                            <p class="sub-payment">Credit Card, Debit Card, Paypal, Apple Pay</p>
-                        </div>
-                    </div>
-                    <div class="policy">
-                        <i class="fa fa-exchange fa-2x"></i>
-                        <div class="sub-policy">
-                            <a href="exchange.html" target="_self"><h6 class="mt3">RETURNS & EXCHANGES</h6></a>
-                            <p class="sub-payment">Complimentary</p>
-                        </div>
-                    </div>
-                    <div class="policy">
-                        <i class="fa fa-truck fa-2x"></i>
-                        <div class="sub-policy">
-                            <h6 class="mt3">PACKAGING</h6>
-                            <p class="sub-payment">Contemporary and eco-friendly wrapping inspired by our Heritage</p>
-                        </div>
+                </div>
+                <div class="policy">
+                    <i class="fa fa-truck fa-2x"></i>
+                    <div class="sub-policy">
+                        <h6 class="mt3">PACKAGING</h6>
+                        <p class="sub-payment">Contemporary and eco-friendly wrapping inspired by our Heritage</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 <hr class="container" />
 <center class="container mt-3">
     <h2>JUST FOR YOU</h2>
 </center>
+
+<div id="demo-1" class="container carousel slide mb-4" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#demo-1" data-slide-to="0" class="active"></li>
+        <li data-target="#demo-1" data-slide-to="1"></li>
+    </ul>
+    <div class="carousel-inner h-50 pt-2">
+        <div class="carousel-item active">
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=9" target="_self"><img src="~/Content/images_final/product/backpack-361-black-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Cross Training</h5>
+                        <p class="item-price font-weight-bold my-0">$65.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=9" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=10" target="_self"><img src="~/Content/images_final/product/bag-handle-pink-1-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Michael Kors</h5>
+                        <p class="item-price font-weight-bold my-0">$400.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=10" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=20" target="_self"><img src="~/Content/images_final/product/slingbag-nike-1-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Heritage Crossbody</h5>
+                        <p class="item-price font-weight-bold my-0">$30.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=20" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=2" target="_self"><img src="~/Content/images_final/product/backpack-kipling-palm-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Seoul Urban Palm</h5>
+                        <p class="item-price font-weight-bold my-0">$250.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=2" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=13" target="_self"><img src="~/Content/images_final/product/bag-saint-black-4-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Becky Double</h5>
+                        <p class="item-price font-weight-bold my-0">$1680.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=13" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=8" target="_self">
+                            <img src="~/Content/images_final/product/backpack-under-armour-white-1.jpg" class="img-thumbnail" />
+                        </a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>UA Kazoku Sackpack</h5>
+                        <p class="item-price font-weight-bold my-0">$54.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=8" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=19" target="_self"><img src="~/Content/images_final/product/bag-Shoudler-Red-10-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Signature</h5>
+                        <p class="item-price font-weight-bold my-0">$810.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=19" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product contain col-sm-3 container">
+                <div class="thumb-wrapper">
+                    <div class="img-box">
+                        <a href="details.html?id=28" target="_self"><img src="~/Content/images_final/product/slingbag-kp-9-1.jpg" class="img-thumbnail" /></a>
+                    </div>
+                    <div class="thumb-content text-center">
+                        <h5>Abanu M Crossbody</h5>
+                        <p class="item-price font-weight-bold my-0">$220.00</p>
+                        <div class="mb-1">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </div>
+                        <a href="details.html?id=28" target="_self" class="add-to-cart btn font-weight-bold rounded-0"><i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>DETAILS ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PREV CAROUSEL -->
+    <a class="carousel-control-prev" href="#demo-1" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <!-- NEXT CAROUSEL -->
+    <a class="carousel-control-next" href="#demo-1" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+<div class="container d-flex justify-content-center">
+    <a href="https://localhost:44388/Product/Index" class="btn btn-outline-dark w-25 rounded-0 mb-4">EXPLORE MORE ></a>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
