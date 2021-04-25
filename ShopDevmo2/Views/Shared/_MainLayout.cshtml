@@ -24,7 +24,8 @@
                     <a class="logo" href="https://localhost:44388/" target="_self">BAGBAG</a>
                 </div>
                 <div class="head-right col-4">
-                    <a class="float-right mr-4" href="https://localhost:44388/Cart/Index" target="_self"><i class="fa fa-shopping-bag mr-1"></i> Cart</a>
+                    <a class="float-right mr-4 badge badge-danger" href="https://localhost:44388/Cart/Index" target="_self"><i class="fa fa-shopping-bag mr-1"></i>@ShopDevmo2.Common.DataUtils.GetNumberOfCartItems(Session["Cart"]) Cart</a>
+                    @*<span class="badge badge-danger">@ShopDevmo2.Common.DataUtils.GetNumberOfCartItems(Session["Cart"])</span>*@
                     <div>
                         <a class="float-right mr-4" href="https://localhost:44388/Account/Login" target="_self"> <i class="fa fa-user mr-1"></i> Login</a>
                     </div>

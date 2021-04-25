@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
             <th></th>
         </tr>
 
@@ -44,8 +47,11 @@
                     <input type="number" value="@item.Quantity" name="quantities" id="quantity_@item.ProductId" />
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Price) $
+                </td>
+                <td>
                     @*@Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
-        @Html.ActionLink("Delete", "RemoveFromCart", new { id = item.ProductId })*@
+                        @Html.ActionLink("Delete", "RemoveFromCart", new { id = item.ProductId })*@
                     <a target="_self" href="@Url.Action("Details", "Product", new { id = item.ProductId })" class="btn btn-info rounded-0 font-weight-bold">Details</a>
                     @Html.ActionLink("Remove", "RemoveFromCart", new { id = item.ProductId }, new { @class = "btn btn-danger rounded-0 font-weight-bold" })
                 </td>
@@ -54,5 +60,5 @@
     </table>
 
     @*<input type="submit" value="Update Cart" class="btn btn-default rounded-0" />
-    @Html.ActionLink("Check out", "CheckOut")*@
+        @Html.ActionLink("Check out", "CheckOut")*@
 }

@@ -6,10 +6,16 @@ using System.Web;
 
 namespace ShopDevmo2.Models.ViewModels
 {
+	using System.ComponentModel.DataAnnotations;
+
 	public class CartItem
 	{
 		public long ProductId { get; set; }
+
+		[Display(Name = "Product name")]
 		public string ProductName { get; set; }
+
+		[Display(Name = "Product image")]
 		public string ImageUrl { get; set; }
 		public int Quantity { get; set; }
 		public decimal Price { get; set; }

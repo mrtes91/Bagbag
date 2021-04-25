@@ -14,6 +14,7 @@ namespace ShopDevmo2.Models
     
         public long Id { get; set; }
         [Required]
+        [Display(Name = "User Name")]
         public string LoginName { get; set; }
         [MinLength(5)]
         [Required]
